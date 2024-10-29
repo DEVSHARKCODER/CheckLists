@@ -3,6 +3,7 @@ const app = express();
 const path = require('path')
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser');
+const fs = require('fs');
 dotenv.config();
 const bodyParser = require('body-parser');
 
@@ -43,6 +44,17 @@ app.use((req, res, next) => {
 
 
 
+// Page 404 
+app.use((req, res, next) => {
+    res.status(404);
+    fs.readFile(path.join(__dirname,  './404.html'), 'utf8', (err, data) => {
+      if (err) {
+        console.error('Error reading 404 page:', err);
+        return res.status(500).send('Internal Server Error');
+      }
+      res.send(data);
+    });
+  });
 
 
 
