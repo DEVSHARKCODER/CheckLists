@@ -227,7 +227,7 @@ async function filterByStatus() {
       checklistItem.className += ` ${containerColor}`;
 
       checklistItem.innerHTML = `
-        <h2 class="font-bold text-2xl text-gray-800">${item.nameitem}</h2>
+         <h2 class="font-bold text-2xl text-gray-800">${item.nameitem}</h2>
         <p class="text-gray-700 mt-2"><strong>คำอธิบาย:</strong> ${item.description}</p>
         <p class="text-gray-700 mt-1"><strong>แท็ก:</strong> ${item.tags}</p>
         <p class="text-gray-700 mt-1"><strong>หมายเหตุ:</strong> ${item.notes}</p>
