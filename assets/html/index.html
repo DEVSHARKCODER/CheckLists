@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Check List</title>
+
+    <link rel="shortcut icon" href="../images/Checklist.png" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Axios -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+
+    <!-- Sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="bg-gray-100 ">
+
+    <header class="w-full">
+        <div class="menu-con flex justify-between items-center px-4 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 shadow-lg rounded-b-lg">
+            <div class="box-forgotpass">
+                <button
+                    onclick="ResetPass()"
+                    class="p-2 mx-2 bg-teal-600 text-white rounded-lg shadow-md hover:bg-teal-700 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                >
+                    รีเซ็ตรหัสผ่าน
+                </button>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button
+                    onclick="Checklist()"
+                    class="p-2 bg-cyan-600 text-white rounded-lg shadow-md hover:bg-cyan-700 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                >
+                    ดูกิจกรรม
+                </button>
+                <button
+                    onclick="Logout()"
+                    class="p-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                >
+                    ออกจากระบบ
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="form-add-check-list flex  justify-center items-center  h-screen p-4">
+        <form id="formlist" class="w-full h-fit max-w-sm flex flex-col bg-white shadow-2xl rounded-lg items-center p-6 gap-3">
+            <p class="text-center text-gray-700">
+                ยินดีต้อนรับ:
+                <span class="text-blue-600" name="username" id="usernameDisplay">Loading...</span>
+            </p>
+            <i class="fas fa-list-check text-blue-600 text-4xl mb-2"></i>
+            <h2 class="font-bold text-2xl text-gray-800 mb-4">CHECK LISTS</h2>
+
+            <label class="w-full text-gray-700">ชื่อรายการ</label>
+            <input class="w-full outline-none border border-blue-600 rounded p-2 focus:border-blue-700" type="text" name="nameitem" required />
+
+            <label class="w-full text-gray-700">คำอธิบาย</label>
+            <input class="w-full outline-none border border-blue-600 rounded p-2 focus:border-blue-700" type="text" name="description" required />
+
+            <label class="w-full text-gray-700">แท็ก</label>
+            <select name="tags" class="w-full bg-blue-500 text-white py-2 rounded focus:ring-2 focus:ring-blue-300" required>
+                <option value="">เลือกแท็ก</option>
+                <option value="การบ้าน">การบ้าน</option>
+                <option value="งานไม่รีบ">งานไม่รีบ</option>
+                <option value="งานนอก">งานนอก</option>
+                <option value="งานด่วน">งานด่วน</option>
+                <option value="งานชิล">งานชิล</option>
+            </select>
+
+            <label class="w-full text-gray-700">หมายเหตุ</label>
+            <textarea class="w-full outline-none border border-blue-600 rounded p-2 resize-none focus:border-blue-700" name="notes"></textarea>
+
+            <label class="w-full text-gray-700">วันกำหนด</label>
+            <input class="w-full outline-none border border-blue-600 rounded p-2 focus:border-blue-700" type="date" name="duedate" required />
+
+            <button class="w-full py-2 mt-4 rounded bg-green-600 text-white hover:bg-green-500 transition">
+                เพิ่มรายการ
+            </button>
+        </form>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

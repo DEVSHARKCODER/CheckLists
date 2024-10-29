@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>เข้าสู่ระบบ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/index.css" />
+
+    <link rel="shortcut icon" href="../images/Login.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Axios -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+
+    <!-- Sweetalert -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div
+      class="con-login bg-gray-100 flex items-center justify-center h-screen"
+    >
+      <div class="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full">
+        <h2 class="text-2xl font-bold text-center mb-6">เข้าสู่ระบบ</h2>
+        <p class="text-center text-red-600 my-2">*ลืมรหัสผ่านติดต่อผู้ดูแลระบบ</p>
+        <form id="loginForm">
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+              >ชื่อผู้ใช้ (กรอกรหัสนักศึกษา หรือ Email)</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="กรุณาใส่ชื่อผู้ใช้"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="password"
+              >รหัสผ่าน</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="กรุณาใส่รหัสผ่าน"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              เข้าสู่ระบบ
+            </button>
+          </div>
+        </form>
+
+        <div class="mt-4 text-center flex items-center justify-end">
+          <a href="/register" class="text-blue-500 hover:text-blue-700"
+            >ยังไม่มีผู้ใช้: สมัครสมาชิก?</a
+          >
+          
+        </div>
+      </div>
+    </div>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

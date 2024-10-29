@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check List</title>
+
+    <link rel="shortcut icon" href="../images/Checklist.png" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Axios -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+
+    <!-- Sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+     <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <div class="loading">
+      <div class="spinner"></div>
+  </div>
+    <div class="back-botton">
+      <button onclick="Index()" class="p-3 m-3 bg-blue-500 rounded text-white hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1"> <i class="fa-solid fa-circle-chevron-left"></i> ย้อนกลับ</button>
+    </div>
+    <div class="container mx-auto py-8">
+      <h1 class="text-2xl font-bold my-4 mx-1">User : <span id="username" class="text-blue-500"></span></h1>
+      
+      <div class="con-checklist flex justify-between">
+        <div class="drop-down flex items-center">
+          <select id="statusFilter" class="bg-white border border-gray-300 rounded-lg shadow-md py-2 px-4 cursor-pointer my-3 mx-3 transition duration-200 ease-in-out hover:border-blue-500 focus:outline-none" onchange="filterByStatus()">
+              <option value="ทั้งหมด" class="text-gray-700">ทั้งหมด</option>
+              <option value="ยังไม่ทำ" class="text-gray-700">ยังไม่ทำ</option>
+              <option value="สำเร็จ" class="text-gray-700">สำเร็จ</option>
+              <option value="ยกเลิก" class="text-gray-700">ยกเลิก</option>
+              <option value="เลยกำหนด" class="text-gray-700">เลยกำหนด</option>
+          </select>
+          <div class="status-message">
+            <span id="status-message" class="text-red-500"></span>
+          </div>
+      </div>
+
+      <div class="flex justify-center m-5">
+        <button onclick="DeleteAll()" class="delete-all-button bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-200">
+            ลบทั้งหมด
+        </button>
+    </div>
+      </div>
+      
+    
+    <div id="checklist-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-3">
+      
+  </div>
+        
+      </div>
+    </div>
+
+
+    
+
+    <script src="../js/checklist.js"></script>
+  </body>
+</html>
